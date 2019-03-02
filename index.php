@@ -64,7 +64,7 @@
 		ussd_proceed($ussd_text);  
     }
 
-    function register($details,$phone, $conne, $isSwahili){      
+    function register($details,$phone, $conn){      
 		if (count($details)==1){   
 				$ussd_text="CON \n ENTER YOUR NAMES:";
 			ussd_proceed($ussd_text);
@@ -83,6 +83,12 @@
 			// 		VALUES ('$name', '$phone', '$id_number', '$business_type' , '$username', 'MOBILE', '$isSwahili')";
 			
 		}  
+	}
+
+	function sell_maize($details, $phone, $conn){
+		if (count($details)==2)
+			$ussd_text="CON \n ENTER YOUR LOCATION:";
+		ussd_proceed($ussd_text);
 	}
 
 ?>
